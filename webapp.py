@@ -74,14 +74,16 @@ def chat():
     # CHANNELS = 1
     # RATE = 44100
     # RECORD_SECONDS = 5
-    subprocess.call(['rm','-r','Sound/{0}/'.format(user_name)])
-    subprocess.call(["mkdir","-p",'Sound/{0}/'.format(user_name)])
-    # # if os._exists('Sound/{0}/'.format(user_name)):
-    # #     os.rmdir('Sound/{0}/'.format(user_name))
+    #    subprocess.call(['rm','-r','/home/ubuntu/website/Front/Sound/{0}/'.format(user_name)])
+    #    subprocess.call(["mkdir","-p",'/home/ubuntu/website/Front/Sound/{0}/'.format(user_name)
+    #try:
+    #   os.rmdir('/home/ubuntu/website/Front/Sound/{0}/'.format(user_name))
+    #except:
+    os.mkdir('/home/ubuntu/website/Front/Sound/{0}/'.format(user_name))
     # # else:
     # #     os.mkdir('Sound/{0}/'.format(user_name))
     # Directory_path ='Sound/{0}/'.format(user_name)
-    WAVE_OUTPUT_FILENAME = "Sound/{0}/output_{1}.wav".format(user_name,datetime.now().time())
+    WAVE_OUTPUT_FILENAME = "/home/ubuntu/website/Front/Sound/{0}/output_{1}.wav".format(user_name,datetime.now().time())
     session['filepath'] = WAVE_OUTPUT_FILENAME
     session['filename'] = "output_{0}.wav".format(datetime.now().time())
     session['username'] = user_name
