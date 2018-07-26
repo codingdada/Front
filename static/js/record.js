@@ -58,7 +58,7 @@ function startRecording() {
         //start the recording process
         rec.record()
 
-        console.log("Recording started");
+        alert("Recording started");
         var timeleft = 5;
 
         var downloadTimer = setInterval(function(){
@@ -71,6 +71,8 @@ function startRecording() {
     //disable the stop button, enable the record too allow for new recordings
     stopButton.disabled = true;
     recordButton.disabled = false;
+
+
 
 
     //reset button just in case the recording is stopped while paused
@@ -141,10 +143,10 @@ function createDownloadLink(blob) {
 
     var filename = new Date().toISOString(); //filename to send to server without extension
 //upload link
-    var upload = document.createElement('a');
-    upload.href="#";
-    upload.innerHTML = "Upload";
-    upload.addEventListener("click", function(event){
+//    var upload = document.createElement('a');
+//    upload.href="#";
+//    upload.innerHTML = "Upload";
+//    upload.addEventListener("click", function(event){
           var xhr=new XMLHttpRequest();
           xhr.onload=function(e) {
               if(this.readyState === 4) {
@@ -158,9 +160,9 @@ function createDownloadLink(blob) {
           fd.append('name', a.value);
           xhr.open("POST","/chat",true);
           xhr.send(fd);
-    })
-    li.appendChild(document.createTextNode (" "));//add a space in between
-    li.appendChild(upload);
+
+//    li.appendChild(document.createTextNode (" "));//add a space in between
+//    li.appendChild(upload);
 }
 
 
