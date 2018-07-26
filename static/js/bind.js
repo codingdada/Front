@@ -17,20 +17,6 @@ var data=[];
     document.getElementById("msg").innerHTML = "Authentication In Progress"
 
 
-//    $.post("/chat",
-//            {
-//                //csrfmiddlewaretoken:csrf,
-//                text:a.value,
-//            },
-//            function(jsondata){
-//            alert(jsondata);
-//                if(jsondata["status"]=="success"){
-//                    response=jsondata["response"];
-//
-//                    alert(response);}
-//                }
-//            });
-
     $.ajax({
  method: "POST",
  url: "/chat",
@@ -41,7 +27,6 @@ cache: false,
 
                 if(jsondata["status"]=="success"){
                     response=jsondata["response"];
-//                    alert(String(response));
                     }
 
 
@@ -50,13 +35,10 @@ cache: false,
                     $("img").removeClass("animate");
                     var check_msg = "Hi ".concat(response).concat("! How can I help You?");
                     document.getElementById("msg").innerHTML = check_msg
-//                    var child = document.getElementById("p1");
-//                    element.insertBefore(para,child);
 
                     console.log(check_msg);
                     var msg = new SpeechSynthesisUtterance(check_msg);
-//                    var voices = window.speechSynthesis.getVoices();
-//                    msg.voice = voices[6]
+
                     msg.volume = 0.5
                     window.speechSynthesis.speak(msg);
 

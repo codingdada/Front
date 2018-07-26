@@ -56,6 +56,7 @@ def index():
 def chat():
     print(request.form)
     user_name=request.form['name']
+
     input_ = request.files['audio_data']
     # in_memory_file = io.BytesIO()
     # input_.save(in_memory_file)
@@ -83,6 +84,7 @@ def chat():
     # #     os.mkdir('Sound/{0}/'.format(user_name))
     # Directory_path ='Sound/{0}/'.format(user_name)
     WAVE_OUTPUT_FILENAME = "/home/ubuntu/website/Front/Sound/output_{0}.wav".format(datetime.now().time())
+    # WAVE_OUTPUT_FILENAME = "output_{0}.wav".format(datetime.now().time())
     session['filepath'] = WAVE_OUTPUT_FILENAME
     session['filename'] = "output_{0}.wav".format(datetime.now().time())
     session['username'] = user_name
