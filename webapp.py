@@ -77,13 +77,12 @@ def chat():
     #    subprocess.call(['rm','-r','/home/ubuntu/website/Front/Sound/{0}/'.format(user_name)])
     #    subprocess.call(["mkdir","-p",'/home/ubuntu/website/Front/Sound/{0}/'.format(user_name)
     #try:
-    #   os.rmdir('/home/ubuntu/website/Front/Sound/{0}/'.format(user_name))
+    #    os.rmdir('/home/ubuntu/website/Front/Sound/{0}/'.format(user_name))
     #except:
-    os.mkdir('/home/ubuntu/website/Front/Sound/{0}/'.format(user_name))
-    # # else:
+    # os.mkdir('/home/ubuntu/website/Front/Sound/{0}/'.format(datetime.now().time())# # else:
     # #     os.mkdir('Sound/{0}/'.format(user_name))
     # Directory_path ='Sound/{0}/'.format(user_name)
-    WAVE_OUTPUT_FILENAME = "/home/ubuntu/website/Front/Sound/{0}/output_{1}.wav".format(user_name,datetime.now().time())
+    WAVE_OUTPUT_FILENAME = "/home/ubuntu/website/Front/Sound/output_{0}.wav".format(datetime.now().time())
     session['filepath'] = WAVE_OUTPUT_FILENAME
     session['filename'] = "output_{0}.wav".format(datetime.now().time())
     session['username'] = user_name
