@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif; background-color:#78909c;}
+
+#container{
+    margin-top: 300px;
+    margin-bottom: 100px;
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+
+    overflow-y: auto;
+    border: 1px solid #888;
+
+}
+
+
+</style>
+
+
+</head>
+<body>
+
+
+
+
+
+
+  <div id="container">
+  <form class="modal-content animate" >
+    <div class="imgcontainer">
+
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAT5SURBVGhD7ZlXqB1VFIavMXbRiMSSqA82NHYRFTsWLDEKgqJBsUAQRcWC+uCLEqOigl18sGA3TUWwJRawxBLFrtiwt0hQU2yxfd/cs2AYzpmZM2fmnCvkh4979z57Zu81s8taa4ZGiNaAUcP//r+0E1wBb8Ji+BeWwTcwE06A1WDEakt4CBx4ERp1MqwAI0qHwy/gIP+EB+BY2ALWgY1gH5gGX0IYZLsR83aOgL/Bgb0NDj5PK8MF8Ad4zdOtuoFqR1gK8YR/g0OgjPaGn8HrbrZiUHJ+vwAOZA7Mav3fjTET4S/4B3a3YhByXTjwJTAOVgJ3pW6NuQ285tmkNAC5UB3AtUlpWFljDoYibQyuMd/KeCv6KQ+4ReCA97AipSrGzAPbn5qU+iifnB271a5oRUajoRtjrgbbXpOU+qj9wI6/TUrtpTEzoIwx54DtpielPslp9TzY8QIrclTWmPPANvckpT7pTLDTYFXIk1OvyJjrwd+vTEp90KYQjmCczIdBkYqMeQP8bXJSalhOqefADh+EW1r/l50OGuMayBqjt2ydG8cYK5rWuWCHP8J6sAu493sG7ABlpDFx/oQxj7XK90LjmgB2bIdHW9FSbLHvwtpWlFDaGN+Cf52mm0Gjcud5FezQAaS1PvwA/vYijIUy0phXwOvkLGhcl4KdGUcYW2S1G/wEtvkCjoO8gGkTuAvCiBuhcR0AeqeyrxUdtC18DDG4T+AqOB4OhEngU38EYjq5toxLGpfT5juw08utaMnd60I4H9JPfnXw7YUPlscz4G7VuBzsXLBT10dEcA483G5x58pqLTBQijYmHjwnHoaLYCvom+zQQRjBxW6iEbdCDPB1yMbbnvJOqQh9bWMUORAZgkbU5twOOb3SRmQXvov+A/B3t1MfhjveQGSk9zU4GOd7WkZw7YxwsJeAU8jfTUCUPSAbkdPkZXAwT4J7fVpum6dD+uBz2r0EXuN0MjG3CgxU+kwOyLOgzMF2IkQuy+12Lxi4poIDcnFvZ0WO1oT7wPbiA7AuT24U60KRy9+TIr5wge5vRY62hljQ5rOmQJ7MpDwK4afJR3Ax1Orp6k64O7lLHWlFjkyBRiyiMZ7mnWQGPhzKwLcdp7p42O4Jteh78KanJaX2MityA8QA7gAH2knuaOFk+ibc/cz9Knc4k3Jvgb/7VreHnvUZeMNOIaantLnZGNRJkCeNeA1sr1e8K7STa+UJsJ2nfnaH7FoGNhGyunWmtSH4jcPf/AzggZenrBHGMHly8S8E2x9qRa86CryZXGYFclF/DtbNh6IMYLdGhK4DrzH50JN0BmdDGCK3Qzwpk9N560FVNUKdAl6nQ1lZzssw4lfwLIlpJmY9ir5b9GKEijzA3UmpopxGYURkNDwMbwLPlqIF2KsR6inw+rOTUgXp1OkbeX74xalb1WHEQeD1v4MZ+UoKv8ogqVvVYcTmYLrVexi/VFZ88to5KZVXXUZ8Bd5Db7vy90Nja28i3bjcdRthLqxs+qitdDkiCDJjWEZ1G/EelO07V3FiF3mvqg4j/GRduxEqvkcY1ua93rqNeB9MM9UmnbYPwZu/A9tAVmY/ok0d00kjNoDaZSd+OrMT14ynvEk3k29mBCOl8ylUMUI9Dt7D+KURI0JmTTTA4MoO02jInaCXWlXHwP2gJ90XOY91E/RC9UjPAL9OLVd9Ghr6D94nr2zyPOk8AAAAAElFTkSuQmCC">
+    </div>
+
+    <div class="container">
+
+      <input type="text" id="test1" placeholder="Enter Username"  required>
+
+
+
+      <button id ="record" >Record to Authenticate<i class="fa fa-microphone"></i></button>
+
+    </div>
+
+
+  </form>
+</div>
+
+<script src="{{ url_for('static', filename="js/bind.js") }}"></script>
+
+</body>
+
+</html>

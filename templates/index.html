@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block header %}
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300|Open+Sans:300|Oxygen|Material+Icons" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <input type="text" name="username" id="test1">
+<button style="font-size:45px" id = "record" >Record   <i class="fa fa-microphone"></i></button>
+
+
+</div>
+
+{% endblock %}
+
+{% block other_footers %}
+<script src="{{ url_for('static', filename="js/bind.js") }}"></script>
+{% endblock %}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+@keyframes example {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+body {font-family: Arial, Helvetica, sans-serif;background-color:#b0bec5}
+
+
+
+img{
+margin-top:10%;
+}
+
+.animate{
+animation-name:example;
+animation-duration:7s;
+}
+
+
+</style>
+
+
+</head>
+<body>
+<div id="container">
+  <center><h2 id="msg"></h2></center>
+<center>
+<img src="static/images/Microphone.png" alt="Microphone" id ="record">
+</center>
+</div>
+</div>
+
+<script src="{{ url_for('static', filename="js/bind.js") }}"></script>
+
+</body>
+
+</html>
+
